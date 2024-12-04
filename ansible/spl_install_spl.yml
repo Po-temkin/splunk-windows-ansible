@@ -38,7 +38,7 @@
   #ansible.windows.win_package:
     path: '{{ ansible_env.TEMP }}\{{ spl_installer_name }}'
     provider: msi
-    arguments: 'AGREETOLICENSE=Yes INSTALLDIR={{ spl_home_dir }} INSTALL_SHORTCUT={{ spl_install_shortcut }} SPLUNKUSERNAME={{ spl_username }} SPLUNKPASSWORD={{ spl_password }}'
+    arguments: 'AGREETOLICENSE=Yes INSTALLDIR="{{ spl_home_dir }}" INSTALL_SHORTCUT={{ spl_install_shortcut }} SPLUNKUSERNAME={{ spl_username }} SPLUNKPASSWORD={{ spl_password }}'
     log_path: '{{ ansible_env.TEMP }}\{{ spl_installer_name.split(".")[0] }}.log'
 
 - name: 'SPL :: Removing TEMP files'
