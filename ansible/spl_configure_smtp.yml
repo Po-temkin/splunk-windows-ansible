@@ -22,6 +22,7 @@
 #    spl_smtp_auth_password #
 #    spl_smtp_footer_text # Specify an alternate email footer
 #    spl_smtp_from # Email address from which the alert originates
+#    spl_smtp_hostname # Specifies a value of message hyperlink
 #    spl_smtp_mailserver # SMTP server name
 #    spl_smtp_pdf_footer_enabled # 0 - disabled; 1- enabled
 #    spl_smtp_pdf_header_enabled # 0 - disabled; 1- enabled
@@ -38,7 +39,7 @@
 
 ---
 
-- name: 'SPL :: Mapping roles with LDAP groups by editing {{ spl_home_dir }}\etc\system\local\alert_actions.conf'
+- name: 'SPL :: Setting up SMTP by editing by editing {{ spl_home_dir }}\etc\system\local\alert_actions.conf'
   include_tasks: ./windows/windows_edit_ini.yml
   vars:
     ini_section: 'email'
@@ -53,6 +54,7 @@
     - { section: '', option: 'auth_username', value: '{{ spl_smtp_auth_username }}' }
     - { section: '', option: 'footer.text', value: '{{ spl_smtp_footer_text }}' }
     - { section: '', option: 'from', value: '{{ spl_smtp_from }}' }
+    - { section: '', option: 'hostname', value: '{{ spl_smtp_hostname }}' }
     - { section: '', option: 'mailserver', value: '{{ spl_smtp_mailserver }}' }
     - { section: '', option: 'pdf.footer_enabled', value: '{{ spl_smtp_pdf_footer_enabled }}' }
     - { section: '', option: 'pdf.header_enabled', value: '{{ spl_smtp_pdf_header_enabled }}' }

@@ -248,11 +248,12 @@
     - import_tasks: ./spl_configure_smtp.yml
       vars:
         #spl_home_dir # Path to Splunk home dir; Taken from inventory
-        spl_smtp_allow_domain_list: '' # Specifies a list of domains to which users are allowed to send email
+        spl_smtp_allow_domain_list: 'example@domaim.com' # Specifies a list of domains to which users are allowed to send email
         #spl_smtp_auth_username: # STMP user; Taken from previous task
         #spl_smtp_auth_password: # Taken from previous task
         spl_smtp_footer_text: 'This mail generaited by SPLUNK' # Specify an alternate email footer
         spl_smtp_from: 'splunk' # Email address from which the alert originates
+        spl_smtp_hostname: 'https://splunk.domain.com:443' # Specifies a value of message hyperlink
         spl_smtp_mailserver: 'smtp.domain.com' # SMTP server name
         spl_smtp_pdf_footer_enabled: 0 # 0 - disabled; 1- enabled
         spl_smtp_pdf_header_enabled: 0 # 0 - disabled; 1- enabled

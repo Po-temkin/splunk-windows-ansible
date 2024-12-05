@@ -85,5 +85,5 @@
 - name: 'SPL :: Deleting old data'
   #ansible.windows.win_file
   win_file:
-    path: '{{ spl_splunkdb_old }}'
+    path: '{{ spl_home_dir }}\var\lib\splunk\'
     state: absent
